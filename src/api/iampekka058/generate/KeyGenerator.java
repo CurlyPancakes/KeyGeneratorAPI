@@ -29,7 +29,7 @@ public class KeyGenerator {
                 for(int i = 0; i < section.length(); i++) {
                     key += pattern.getAlphabet_pattern().charAt((int) Math.round(Math.random() * (pattern.getAlphabet_pattern().length() - 1)));
                 }
-                if(counter != 5)
+                if(counter != sections.length)
                     key += "-";
             }
             counter = 0;
