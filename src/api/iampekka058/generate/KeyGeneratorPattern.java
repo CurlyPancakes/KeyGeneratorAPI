@@ -3,18 +3,18 @@ package api.iampekka058.generate;
 public class KeyGeneratorPattern {
     private String key_pattern;
     private int control_number;
-    private int number_sum;
+    private int ascii_count;
     private String alphabet_pattern;
 
-    public KeyGeneratorPattern(String key_pattern, int control_number, int number_sum, String alphabet_pattern){
+    public KeyGeneratorPattern(String key_pattern, int control_number, int ascii_count, String alphabet_pattern){
         this.key_pattern = key_pattern;
         this.control_number = control_number;
-        this.number_sum = number_sum;
+        this.ascii_count = ascii_count;
         this.alphabet_pattern = alphabet_pattern;
     }
 
     public static KeyGeneratorPattern getDefault(){
-        return new KeyGeneratorPattern("aaaa-aaaa-aaaa-aaaa-1111",7, 1973, "abcdefghijklmnopqrstufwxyz1234567890");
+        return new KeyGeneratorPattern("aaaa-aaaa-aaaa-aaaa-1111",7, 973, "abcdefghijklmnopqrstufwxyz1234567890");
     }
 
     public String getKey_pattern() {
@@ -29,4 +29,7 @@ public class KeyGeneratorPattern {
         return control_number;
     }
 
+    public int getAscii_count() {
+        return ascii_count;
+    }
 }
