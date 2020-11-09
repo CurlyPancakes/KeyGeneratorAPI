@@ -1,9 +1,11 @@
-package api.iampekka058.generate;
+package api.zerodeveloping;
+
+import api.zerodeveloping.exception.AsciiException;
 
 public class KeyGenerator {
-    KeyGeneratorPattern pattern;
+    KeyPattern pattern;
 
-    public void setPattern(KeyGeneratorPattern pattern) {
+    public void setPattern(KeyPattern pattern) {
         this.pattern = pattern;
     }
 
@@ -12,13 +14,23 @@ public class KeyGenerator {
 
         int security_numbers = (int) (Math.ceil(sections.length / 2.0));
         int maxAscii = 0;
+        int ascii_multiplier = 0;
         for (String section : sections) {
             maxAscii += section.length();
+            for(int i = 0; i < section.length(); i++){
+                int ascii_char = (int) section.charAt(i);
+                if(ascii_char > ascii_multiplier){
+                    ascii_multiplier = ascii_char;
+                }
+            }
         }
-        maxAscii *= 125;
-        maxAscii *= 0.8;
+        maxAscii *= ascii_multiplier;
+        try{
+            if(pattern.getAscii_count() > maxAscii) throw new AsciiException(maxAscii, pattern.getAscii_count());
 
-        System.out.println(maxAscii);
+        }catch (AsciiException e){
+            e.printStackTrace();
+        }
 
         String key = "";
         while(true) {
@@ -40,7 +52,7 @@ public class KeyGenerator {
                 }
             }
 
-            if(security_numbers == char_counter) {
+            if(security_numbers <= char_counter) {
                 int ascii_count = 0;
                 for(int i = 0; i < key.length(); i++) {
                     if(key.charAt(i) != '-') {
@@ -48,15 +60,10 @@ public class KeyGenerator {
                     }
                 }
                 if(ascii_count == pattern.getAscii_count()) {
-                    System.exit(0);
-                } else {
-                    System.out.println(ascii_count);
+                    System.out.println(key);
+                    break;
                 }
-            } else {
-                System.out.println(char_counter);
             }
-            System.out.println(key);
-
             key = "";
         }
     }
