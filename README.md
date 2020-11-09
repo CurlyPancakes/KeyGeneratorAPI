@@ -2,7 +2,7 @@
 
 Latest Version: [v.1.0](https://github.com/Zero-Developing/KeyGeneratorAPI/releases/tag/v.1.0)
 
-The KeyGeneratorAPI is a API developed by Zero-Developing for generating and scanning Keys. You can use these Keys to verify Beta-Users.
+The KeyGeneratorAPI is a API developed by Zero-Developing for generating and scanning Keys. You can use these Keys to verify Beta-Users. We **do not recommend** to use this key's as **security feature** or for **paid licenses**.
 
 ## Installation
 
@@ -18,7 +18,7 @@ For ***test purposes*** you can use the ```KeyPattern.getDefault();```function, 
 - ascii_code -> 1648
 - alphabet_pattern -> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYL0123456789"
 
-A generated Key with the default parameters would look like this: ***Qr8K-VT7Y-nPo2-o7m7-IHtB***
+A generated Key with the default parameters would look like this: **Qr8K-VT7Y-nPo2-o7m7-IHtB**
 
 ### Generate a Key
 To generate a Key you have to create a instance of the KeyGenerator class.
