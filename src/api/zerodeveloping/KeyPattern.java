@@ -18,7 +18,7 @@ public class KeyPattern {
     }
 
     public static KeyPattern getDefault(){
-        return new KeyPattern("aaaa-aaaa-aaaa-aaaa-1111",'7', 50000, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYL0123456789");
+        return new KeyPattern("aaaa-aaaa-aaaa-aaaa-aaaa",'7', 1648, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYL0123456789");
     }
 
     public String getKey_pattern() {
