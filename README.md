@@ -18,16 +18,25 @@ For ***test purposes*** you can use the ```KeyPattern.getDefault();```function, 
 - ascii_code -> 1648
 - alphabet_pattern -> "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYL0123456789"
 
-A generated Key with the default parameters would look like this: Qr8K-VT7Y-nPo2-o7m7-IHtB
+A generated Key with the default parameters would look like this: ***Qr8K-VT7Y-nPo2-o7m7-IHtB***
 
 ### Generate a Key
 To generate a Key you have to create a instance of the KeyGenerator class.
 The Generator needs a pattern to generate a Key so we set one.
+The last step is to call the generate method.
 ```java
 KeyGenerator keyGenerator = new KeyGenerator();
 keyGenerator.setPattern(KeyPattern.getDefault());
+String key = keyGenerator.generate();
 ```
 ### Check if a Key is valid
-To check if a key is valid you can use the KeyScanner class. 
+To check if a key is valid you can use the KeyScanner class. First create an instance of the KeyScanner class, then set a pattern to scan. To actually check if a Key is valid you can use the ```KeyPattern.isValid();``` method.
 
+```java
 KeyScanner keyScanner = new KeyScanner();
+keyScanner.setPattern(KeyPattern.getDefault());
+
+if(keyScanner.isValid(key)){
+//Do something...
+}
+```
