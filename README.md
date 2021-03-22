@@ -1,8 +1,8 @@
 # KeyGeneratorAPI
 
-Latest Version: [v.1.0](https://github.com/Zero-Developing/KeyGeneratorAPI/releases/tag/v.1.0)
+Latest Version: [v.1.0](https://github.com/BlueLight/KeyGeneratorAPI/releases/tag/v.1.0)
 
-The KeyGeneratorAPI is a API developed by Zero-Developing for generating and scanning Keys. You can use these Keys to verify Beta-Users. We **do not recommend** to use this key's as **security feature** or for **paid licenses**.
+The KeyGeneratorAPI is a API developed by BlueLight for generating and scanning Keys. You can use these Keys to verify Beta-Users. We **do not recommend** to use this key's as **security feature** or for **paid licenses**.
 
 ## Installation
 
